@@ -15,7 +15,6 @@ public class overall_text : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        text.text = (string) GlobalVariables.states[GlobalVariables.level];
         
     }
 }

@@ -10,7 +10,14 @@ public class QuicklyScript : MonoBehaviour
 
     void Start()
     {
-        StartCoroutine(ExampleCoroutine());
+        if (GlobalVariables.stage == 0)
+        {
+            StartCoroutine(ExampleCoroutine());
+        }
+        else
+        {
+            StartCoroutine(ExampleCoroutine2());
+        }
     }
 
     void Update()
@@ -28,8 +35,19 @@ public class QuicklyScript : MonoBehaviour
 
         yield return new WaitForSeconds(7);
 
+        GlobalVariables.stage = 1;
+
         //change scene to TinaBedroom
-        SceneManager.LoadScene("TinaBedroom Scene");
+        SceneManager.LoadScene("SampleScene");
+    }
+
+    IEnumerator ExampleCoroutine2()
+    {
+        GlobalVariables.choice = false;
+
+        
+
+        yield return new WaitForSeconds(7);
     }
 
 }
