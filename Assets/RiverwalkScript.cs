@@ -2,22 +2,26 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
-
 public class RiverwalkScript : MonoBehaviour
 {
     public Text story;
-    public GameObject badEndText;
-    public GameObject tinaCry;
+
     public GameObject textBox;
     public GameObject tinaChar;
+    public GameObject jimChar;
+    public GameObject tinaShy;
+    public GameObject jimShy;
     public GameObject choices;
+
+    public Text yes;
+    public Text no;
 
     void Start()
     {
-        badEndText.SetActive(false);
-        tinaCry.SetActive(false);
+        jimShy.SetActive(false);
+        tinaShy.SetActive(false);
 
-        if (GlobalVariables.stage == 4)
+        if (GlobalVariables.stage == 4) //say yes to the date
         {
             StartCoroutine(FirstDate());
         }
@@ -25,46 +29,59 @@ public class RiverwalkScript : MonoBehaviour
         {
             StartCoroutine(SecondDate());
         }
-        else if (GlobalVariables.stage == 10)
+        else if (GlobalVariables.stage == 9 || GlobalVariables.stage == 6)
         {
-            StartCoroutine(BadEnding3());
+            StartCoroutine(Girlfriend());
         }
-    }
-
-    void Update()
-    {
-
     }
     IEnumerator FirstDate()
     {
+        GlobalVariables.choice = false;
+        tinaChar.SetActive(false);
+        jimChar.SetActive(false);
+
+        tinaShy.SetActive(true);
+        jimShy.SetActive(true);
+        story.text = "We went on a few dates together and I think that I really like him.";
         yield return new WaitForSeconds(5);
-        story.text = "Do I apologize the next time I see him?";
-        //present choice boxes here
+        story.text = "For one of our dates, we ended up going to Tampa Riverwalk.";
+        yield return new WaitForSeconds(5);
+
+        jimShy.SetActive(false);
+        story.text = "He leans in for a kiss, should I kiss him back?";
+
         GlobalVariables.choice = true;
     }
 
     IEnumerator SecondDate()
     {
+        GlobalVariables.choice = false;
+
+        story.text = "I decided not to kiss him just yet because I didn't feel ready just yet.";
         yield return new WaitForSeconds(5);
-        story.text = "Do I apologize the next time I see him?";
-        //present choice boxes here
+
+        story.text = "We go on another date at Riverwalk after a few weeks.";
+        yield return new WaitForSeconds(3);
+
+        jimChar.SetActive(false);
+        story.text = "He leans in for another kiss, what should I do?";
+
+        yes.text = "kiss him";
+        no.text = "reject him";
+
         GlobalVariables.choice = true;
     }
 
-    IEnumerator BadEnding3()
+    IEnumerator Girlfriend()
     {
-        choices.SetActive(false);
+        GlobalVariables.choice = false;
 
-        story.text = "You decided that it wasn't a big deal, so you didn't apologize.";
+
+        story.text = "We kissed and soon after, he asked me to be his girlfriend";
         yield return new WaitForSeconds(5);
 
-        story.text = "He truly didn't mind, but he forgot about you.";
-        yield return new WaitForSeconds(5);
+        story.text = "Should I become his girlfriend?";
 
-        textBox.SetActive(false);
-        tinaChar.SetActive(false);
-
-        badEndText.SetActive(true);
-        tinaCry.SetActive(true);
+        GlobalVariables.choice = true;
     }
 }

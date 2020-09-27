@@ -43,30 +43,29 @@ public class ClickJimsBedroom : MonoBehaviour
                         if (hit.collider.gameObject.name == "Yes Box")
                         {
                             GlobalVariables.stage = 13;
-                            SceneManager.LoadScene("JimsBedroom Scene");
+                            SceneManager.LoadScene("JimBedroom Scene");
                         }
 
                         else if (hit.collider.gameObject.name == "No Box")
                         {
                             GlobalVariables.stage = 14;
-                            SceneManager.LoadScene("JimsBedroom Scene");
+                            SceneManager.LoadScene("JimBedroom Scene");
 
                         }
-                    }
-
-                    else if (GlobalVariables.stage == 13 || GlobalVariables.stage == 14)
-                    {
-                        if (hit.collider.gameObject.name == "Yes Box")
+                        else
                         {
-                            GlobalVariables.stage = 15;
-                            SceneManager.LoadScene("JimsBedroom Scene");
-                        }
+                            if (hit.collider.gameObject.name == "Yes Box")
+                            {
+                                GlobalVariables.stage = 15;
+                                SceneManager.LoadScene("SampleScene");
+                            }
 
-                        else if (hit.collider.gameObject.name == "No Box")
-                        {
-                            GlobalVariables.stage = 16;
-                            SceneManager.LoadScene("JimsBedroom Scene");
+                            else if (hit.collider.gameObject.name == "No Box")
+                            {
+                                GlobalVariables.stage = 16;
+                                SceneManager.LoadScene("JimBedroom Scene");
 
+                            }
                         }
                     }
                 }
