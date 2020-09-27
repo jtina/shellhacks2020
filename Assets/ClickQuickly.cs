@@ -29,28 +29,16 @@ public class ClickQuickly : MonoBehaviour
             no_box.SetActive(true);
             no_choice.enabled = true;
 
-            if (Input.GetMouseButtonDown(0))
+            if (Input.GetKeyDown(KeyCode.Y))
             {
-                Vector3 mousePos = Camera.main.ScreenToWorldPoint(Input.mousePosition);
-                Vector2 mousePos2D = new Vector2(mousePos.x, mousePos.y);
+                GlobalVariables.stage = 4;
+                SceneManager.LoadScene("SampleScene");
+            }
 
-                RaycastHit2D hit = Physics2D.Raycast(mousePos2D, Vector2.zero);
-
-                if (hit.collider != null)
-                {
-                    if (hit.collider.gameObject.name == "Yes Box")  //say yes to being going on a date
-                    {
-                        GlobalVariables.stage = 4;
-                        SceneManager.LoadScene("SampleScene");
-                    }
-
-                    else if (hit.collider.gameObject.name == "No Box")  //reject the date
-                    {
-                        GlobalVariables.stage = 5; //bad ending 2
-                        SceneManager.LoadScene("TinaBedroom Scene");
-
-                    }
-                }
+            if (Input.GetKeyDown(KeyCode.N))
+            {    
+                GlobalVariables.stage = 5; //bad ending 2
+                SceneManager.LoadScene("TinaBedroom Scene");
             }
         }
 

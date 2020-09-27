@@ -363,6 +363,11 @@ PrefabInstance:
       propertyPath: m_LocalPosition.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 3164105874866272643, guid: 15428e4e0d891f6409ebd237ad49dc5f,
+        type: 3}
+      propertyPath: m_IsTrigger
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents:
     - {fileID: 3164105873284129559, guid: 15428e4e0d891f6409ebd237ad49dc5f, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: 15428e4e0d891f6409ebd237ad49dc5f, type: 3}
@@ -845,6 +850,11 @@ PrefabInstance:
       propertyPath: tinaChar
       value: 
       objectReference: {fileID: 1021663048}
+    - target: {fileID: 4718419372542518597, guid: 805a39bf6e192504e8e99f2dbe8f1171,
+        type: 3}
+      propertyPath: tinaWave
+      value: 
+      objectReference: {fileID: 1278583844}
     - target: {fileID: 4718419373818532338, guid: 805a39bf6e192504e8e99f2dbe8f1171,
         type: 3}
       propertyPath: m_Name

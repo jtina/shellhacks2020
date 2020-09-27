@@ -29,50 +29,37 @@ public class ClickJimsBedroom : MonoBehaviour
             no_box.SetActive(true);
             no_choice.enabled = true;
 
-            if (Input.GetMouseButtonDown(0))
+            if (GlobalVariables.stage == 11)
             {
-                Vector3 mousePos = Camera.main.ScreenToWorldPoint(Input.mousePosition);
-                Vector2 mousePos2D = new Vector2(mousePos.x, mousePos.y);
-
-                RaycastHit2D hit = Physics2D.Raycast(mousePos2D, Vector2.zero);
-
-                if (hit.collider != null)
+                if (Input.GetKeyDown(KeyCode.Y))
                 {
-                    if (GlobalVariables.stage == 11)
-                    {
-                        if (hit.collider.gameObject.name == "Yes Box")
-                        {
-                            GlobalVariables.stage = 13;
-                            SceneManager.LoadScene("JimBedroom Scene");
-                        }
+                    GlobalVariables.stage = 13;
+                    SceneManager.LoadScene("JimBedroom Scene");
+                }
 
-                        else if (hit.collider.gameObject.name == "No Box")
-                        {
-                            GlobalVariables.stage = 14;
-                            SceneManager.LoadScene("JimBedroom Scene");
-
-                        }
-                        else
-                        {
-                            if (hit.collider.gameObject.name == "Yes Box")
-                            {
-                                GlobalVariables.stage = 15;
-                                SceneManager.LoadScene("SampleScene");
-                            }
-
-                            else if (hit.collider.gameObject.name == "No Box")
-                            {
-                                GlobalVariables.stage = 16;
-                                SceneManager.LoadScene("JimBedroom Scene");
-
-                            }
-                        }
-                    }
+                if (Input.GetKeyDown(KeyCode.N))
+                {
+                    GlobalVariables.stage = 14;
+                    SceneManager.LoadScene("JimBedroom Scene");
                 }
             }
+            else
+            {
+                if (Input.GetKeyDown(KeyCode.Y))
+                {
+                    GlobalVariables.stage = 15;
+                    SceneManager.LoadScene("SampleScene");
+                }
+
+                if (Input.GetKeyDown(KeyCode.N))
+                {
+                    GlobalVariables.stage = 16;
+                    SceneManager.LoadScene("JimBedroom Scene");
+                }
+            }
+              
+                
         }
-
-
     }
 
 

@@ -5,7 +5,7 @@ public static class GlobalVariables
 {
     public static int level = 0;
     public static ArrayList states = new ArrayList(new string[] {
-        "Go to quickly to start the story",
+        "Go to Quickly to start the story!",
         "Go to Tina's to continue the story",
 
         "You have picked yes! Now head to Quickly again!",
@@ -21,7 +21,7 @@ public static class GlobalVariables
         "You picked yes! That's lovely!",
         "You picked no :) Story ends here...",
 
-        "You picked yes! Yay!",
+        "You picked yes! Yay! Now head to Jim's house!",
         "You picked no :) Story ends here...",
 
         "You picked yes! Amazing! You both get each other a gift!",
@@ -29,7 +29,7 @@ public static class GlobalVariables
 
         "Let's go! You both make an awesome project and demo it to the judges!",
         "You pick no and he gets real real sad... cuz ShellHacks is amazing!",
-
+        
 
     });
 
