@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class MouseLook : MonoBehaviour
 {
-    public float mouseSensitivity = 100f;   //control speed of mouse default to 100
+    public float mouseSensitivity = 300f;   //control speed of mouse default to 100
 
     public Transform playerBody;
 
