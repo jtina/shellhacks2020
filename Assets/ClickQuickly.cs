@@ -38,13 +38,13 @@ public class ClickQuickly : MonoBehaviour
 
                 if (hit.collider != null)
                 {
-                    if (hit.collider.gameObject.name == "Yes Box")
+                    if (hit.collider.gameObject.name == "Yes Box")  //say yes to being going on a date
                     {
                         GlobalVariables.stage = 4;
                         SceneManager.LoadScene("SampleScene");
                     }
 
-                    else if (hit.collider.gameObject.name == "No Box")
+                    else if (hit.collider.gameObject.name == "No Box")  //reject the date
                     {
                         GlobalVariables.stage = 5; //bad ending 2
                         SceneManager.LoadScene("TinaBedroom Scene");

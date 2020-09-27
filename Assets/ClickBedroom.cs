@@ -40,11 +40,11 @@ public class ClickBedroom : MonoBehaviour
                 {
                     if(hit.collider.gameObject.name == "Yes Box")
                     {
-                         GlobalVariables.stage = 2; 
+                         GlobalVariables.stage = 2; //decide to apologize
                          SceneManager.LoadScene("SampleScene");
                     }
 
-                    else if (hit.collider.gameObject.name == "No Box")
+                    else if (hit.collider.gameObject.name == "No Box") //no apology
                     {
                          GlobalVariables.stage = 3; //bad ending 1
                          SceneManager.LoadScene("TinaBedroom Scene");

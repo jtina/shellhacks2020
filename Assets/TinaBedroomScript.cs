@@ -24,7 +24,7 @@ public class TinaBedroomScript : MonoBehaviour
         }
         else
         {
-            StartCoroutine(BadEnding1());
+            StartCoroutine(BadEnding());
         }
     }
 
@@ -40,15 +40,39 @@ public class TinaBedroomScript : MonoBehaviour
         GlobalVariables.choice = true;
     }
 
-    IEnumerator BadEnding1()
+    IEnumerator BadEnding()
     {
         choices.SetActive(false);
 
-        story.text = "You decided that it wasn't a big deal, so you didn't apologize.";
-        yield return new WaitForSeconds(5);
+        if (GlobalVariables.stage == 3)
+        {
+            story.text = "I decided that it wasn't a big deal, so I didn't apologize.";
+            yield return new WaitForSeconds(5);
 
-        story.text = "He truly didn't mind, but he forgot about you.";
-        yield return new WaitForSeconds(5);
+            story.text = "He truly didn't mind, but he forgot about me.";
+            yield return new WaitForSeconds(3);
+        }
+
+        else if (GlobalVariables.stage == 5)
+        {
+            story.text = "I didn't give him a chance and I chose to say no to going on a date with him";
+            yield return new WaitForSeconds(3);
+        }
+
+        else if (GlobalVariables.stage == 10)
+        {
+            story.text = "I rejected him for a second time so he felt discouraged and we ended up breaking up.";
+            yield return new WaitForSeconds(5);
+        }
+
+        else if (GlobalVariables.stage == 12)
+        {
+            story.text = "I didn't think that I was ready for a boyfriend, so I chose not to become his girlfriend";
+            yield return new WaitForSeconds(5);
+        }
+
+        story.text = "Our story ends here";
+        yield return new WaitForSeconds(3);
 
         textBox.SetActive(false);
         tinaChar.SetActive(false);
