@@ -4,8 +4,7 @@ using UnityEngine;
 
 public static class GlobalVariables
 {
-    public static int level = 0;
+    public static bool choice = false;
+    public static int stage = 0;
     
-
-
 }
